@@ -1,4 +1,11 @@
 <header style="border: 4px double black;">
 <%= link_to "Home", root_path %>
-<%= link_to "Sign in", '#' %>
+
+<% if signed_in? %>
+  <ul>
+    <li><%= link_to "Sign out", admin_signout_path, :class => "btn btn-primary", method: "delete" %></li>
+    <li><%= link_to "Sign up", new_admin_user_path, :class => "btn btn-primary" %></li>
+  </ul>
+<% end %>
+
 </header>
