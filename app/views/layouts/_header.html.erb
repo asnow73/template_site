@@ -1,11 +1,18 @@
-<header style="border: 4px double black;">
-<%= link_to "Home", root_path %>
-
-<% if signed_in? %>
-  <ul>
-    <li><%= link_to "Sign out", admin_signout_path, :class => "btn btn-primary", method: "delete" %></li>
-    <li><%= link_to "Sign up", new_admin_user_path, :class => "btn btn-primary" %></li>
-  </ul>
-<% end %>
-
+<header>
+	<div class="navbar navbar-fixed-top navbar-inverse">
+	  <div class="navbar-inner">
+	    <div class="container">
+	      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	        <span class="icon-bar"></span>
+	      </a>
+	      <%= link_to "Домой", root_path, :class => "brand pull-left" %>
+	      <div class="nav-collapse pull-right">
+	        <div class="btn-group">
+					  <button type="button" class="btn btn-default"><%= link_to "Войти", admin_signin_path %></button>
+					  <button type="button" class="btn btn-default"><%= link_to "Выйти", admin_signout_path, method: "delete" %></button>
+					</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
 </header>

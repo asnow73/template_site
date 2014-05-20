@@ -1,7 +1,7 @@
 <% provide(:title, "Sign in") %>
 
-<div>
-	<div>Вход в административную панель</div>
+<div class="center">
+	<div class="thema-text">Вход в административную панель</div>
   <%= simple_form_for(:session, url: admin_sessions_path) do |f| %>
 
     <%= f.input :email, label: 'e-mail' %>
