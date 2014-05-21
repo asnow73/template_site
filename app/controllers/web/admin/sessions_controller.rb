@@ -1,5 +1,6 @@
 class Web::Admin::SessionsController < ApplicationController
   def new
+    add_breadcrumb "Вход в систему", :admin_signin_path
     if User.count == 0
       User.create_first_admin
       #Section.create_default_sections Временно пока нет модели section

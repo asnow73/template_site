@@ -1,6 +1,6 @@
 class Web::Admin::AdminApplicationController < ApplicationController
   # before_action :require_login
-
+  add_breadcrumb "Административная панель", :admin_root_path
   before_action :signed_in_user
 
   private

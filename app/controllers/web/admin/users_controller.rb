@@ -1,10 +1,12 @@
 class Web::Admin::UsersController < Web::Admin::AdminApplicationController
+  add_breadcrumb "Пользователи", :admin_users_path
   def index
     @q = User.ransack params[:q]
     @users = @q.result.order(sort_string).page(params[:page])
   end
 
   def new
+    add_breadcrumb "Регистрация нового пользователя", :new_admin_user_path
     @user = User.new
   end
 
@@ -30,6 +32,7 @@ class Web::Admin::UsersController < Web::Admin::AdminApplicationController
   end
 
   def edit
+    add_breadcrumb "Редактирование пользователя", :edit_admin_user_path
     @user = User.find(params[:id])
   end
 
