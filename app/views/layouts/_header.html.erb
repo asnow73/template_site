@@ -8,8 +8,11 @@
 	      <%= link_to "Домой", root_path, :class => "brand pull-left" %>
 	      <div class="nav-collapse pull-right">
 	        <div class="btn-group">
-					  <button type="button" class="btn btn-default"><%= link_to "Войти", admin_signin_path %></button>
-					  <button type="button" class="btn btn-default"><%= link_to "Выйти", admin_signout_path, method: "delete" %></button>
+	        	<% if signed_in? %>
+					    <button type="button" class="btn btn-default"><%= link_to "Выйти", auth_signout_path, method: "delete" %></button>
+					  <% else %>
+					    <button type="button" class="btn btn-default"><%= link_to "Войти", auth_signin_path %></button>
+					  <% end %>>
 					</div>
 	      </div>
 	    </div>

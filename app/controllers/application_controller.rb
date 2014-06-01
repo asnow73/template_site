@@ -7,10 +7,16 @@ class ApplicationController < ActionController::Base
   add_breadcrumb "Домой", :root_path
 
   protect_from_forgery with: :exception
-  include Web::Admin::SessionsHelper
+  include Web::Auth::SessionsHelper
 
   def not_found
     raise ActionController::RoutingError.new('Not Found')
+  end
+
+  def not_authenticated
+    # Make sure that we reference the route from the main app.
+    # redirect_to admin_signin_path
+    redirect_to auth_signin_path
   end
 
   protected

@@ -1,4 +1,12 @@
 RailsAdmin.config do |config|
+  config.current_user_method do
+    signed_in?
+  end
+
+  config.authenticate_with do
+    signed_in_user
+  end
+  
   config.model User do
     edit do
       field :name do
