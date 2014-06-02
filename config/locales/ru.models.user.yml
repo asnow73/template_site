@@ -1,0 +1,7 @@
+ru:
+  models:
+    user:
+      name: 'Имя'
+      email: 'e-mail'
+      password: 'Пароль'
+      password_confirmation: 'Подтверждение пароля'

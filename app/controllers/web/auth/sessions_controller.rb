@@ -1,6 +1,6 @@
-class Web::Admin::SessionsController < ApplicationController
+class Web::Auth::SessionsController < ApplicationController
   def new
-    add_breadcrumb "Вход в систему", :admin_signin_path
+    add_breadcrumb "Вход в систему", :auth_signin_path #:admin_signin_path
     if User.count == 0
       User.create_first_admin
       #Section.create_default_sections Временно пока нет модели section
@@ -14,7 +14,7 @@ class Web::Admin::SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       sign_in user
-      redirect_back_or admin_root_path
+      redirect_back_or rails_admin_path
     else
       flash.now[:error] = 'Неверный e-mail или пароль'
       render 'new'
@@ -23,7 +23,7 @@ class Web::Admin::SessionsController < ApplicationController
 
   def destroy
     sign_out
-    redirect_to admin_root_path
+    redirect_to root_path
   end
 
 end
