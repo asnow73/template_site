@@ -1,0 +1,13 @@
+ru:
+  sessions:
+    helper:
+      please_log_in: "Пожалуйста авторизуйтесь."
+    controller:
+      login: "Вход в систему"
+      first_admin_was_created: 'Был создан пользователь с email = admin@admin.ru и паролем = "admin". Для безопасности рекомендуется изменить email/пароль пользователя "admin"'
+      email_or_password_is_fail: 'Неверный e-mail или пароль'
+    view:
+      input_to_admin_dashboard: 'Вход в административную панель'
+      email: 'e-mail'
+      password: 'Пароль'
+      enter: 'Войти'

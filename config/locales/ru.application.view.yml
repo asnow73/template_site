@@ -1,0 +1,12 @@
+ru:
+  application:
+    view:
+      shared:
+        error_messages:
+          errors: "ошибок"
+      layouts:
+        header:
+          login: "Войти"
+          logout: "Выйти"
+    controller:
+      home: "Домой"

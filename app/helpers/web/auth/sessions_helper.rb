@@ -23,7 +23,7 @@ module Web::Auth::SessionsHelper
   def signed_in_user
     if signed_in? == false
       store_location
-      flash[:notice] = "Пожалуйста авторизуйтесь."
+      flash[:notice] = I18n.t "sessions.helper.please_log_in"  #"Пожалуйста авторизуйтесь."
       redirect_to main_app.auth_signin_path
     end
   end

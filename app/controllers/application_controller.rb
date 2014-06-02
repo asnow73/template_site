@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_i18n_locale_from_params
 
 
-  add_breadcrumb "Домой", :root_path
+  add_breadcrumb (I18n.t "application.controller.home"), :root_path
 
   protect_from_forgery with: :exception
   include Web::Auth::SessionsHelper

@@ -1,13 +1,13 @@
 <% provide(:title, "Sign in") %>
 
 <div class="center">
-	<div class="thema-text">Вход в административную панель</div>
+	<div class="thema-text"><%= I18n.t "sessions.view.input_to_admin_dashboard"%></div>
   <%= simple_form_for(:session, url: auth_sessions_path) do |f| %>
 
-    <%= f.input :email, label: 'e-mail' %>
-    <%= f.input :password, label: 'Пароль' %>
+    <%= f.input :email, label: (I18n.t "sessions.view.email") %>
+    <%= f.input :password, label: (I18n.t "sessions.view.password") %>
 
-    <%= f.submit "Войти", class: "btn btn-large btn-primary" %>
+    <%= f.submit (I18n.t "sessions.view.enter"), class: "btn btn-large btn-primary" %>
   <% end %>
 
 </div>
