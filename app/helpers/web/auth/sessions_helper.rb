@@ -1,4 +1,4 @@
-module Web::Admin::SessionsHelper
+module Web::Auth::SessionsHelper
   def sign_in(user)
     remember_token = User.new_remember_token
     cookies.permanent[:remember_token] = remember_token
@@ -23,8 +23,8 @@ module Web::Admin::SessionsHelper
   def signed_in_user
     if signed_in? == false
       store_location
-      flash[:notice] = "Пожалуйста авторизуйтесь."
-      redirect_to admin_signin_path
+      flash[:notice] = I18n.t "sessions.helper.please_log_in"  #"Пожалуйста авторизуйтесь."
+      redirect_to main_app.auth_signin_path
     end
   end
 

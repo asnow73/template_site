@@ -1,14 +1,16 @@
 TemplateSite::Application.routes.draw do
-  #get "static_pages/home"
-  root 'static_pages#home'
 
-  scope module: :web do
-    namespace :admin do
-      root to: "welcome#index"
-      resources :users
-      resources :sessions, only: [:new, :create, :destroy]
-      match '/signin',  to: 'sessions#new',         via: 'get'
-      match '/signout', to: 'sessions#destroy',     via: 'delete'
+  scope '(:locale)' do
+    mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+    root 'static_pages#home'
+
+    scope module: :web do
+      # namespace :admin do
+      namespace :auth do
+        resources :sessions, only: [:new, :create, :destroy]
+        match '/signin',  to: 'sessions#new',         via: 'get'
+        match '/signout', to: 'sessions#destroy',     via: 'delete'
+      end
     end
   end
   #match '/home', to: 'static_pages#home', via: 'get'

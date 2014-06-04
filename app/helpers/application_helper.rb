@@ -1,7 +1,8 @@
 module ApplicationHelper
   # Returns the full title on a per-page basis.
   def full_title(page_title)
-    base_title = MyAppSettings.title #{}"AlbertRoom"
+    #base_title = MyAppSettings.title
+    base_title = configus.app_title
     if page_title.empty?
       base_title
     else

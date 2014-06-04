@@ -27,3 +27,7 @@ TemplateSite::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 end
+
+# ActionDispatch::Reloader.to_prepare do
+#   load Rails.root.join('lib/configus.rb')
+# end
