@@ -13,7 +13,8 @@ gem 'configus'
 #gem 'kaminari'
 gem 'rails_admin'
 gem 'ckeditor'
-gem 'simple_form', '~> 3.0.0'
+#gem 'simple_form', '~> 3.0.0'
+gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form', branch: 'master'
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do

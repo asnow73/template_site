@@ -11,3 +11,5 @@ ru:
       email: 'e-mail'
       password: 'Пароль'
       enter: 'Войти'
+      enter_email: 'Введите email'
+      enter_password: 'Введите пароль'
