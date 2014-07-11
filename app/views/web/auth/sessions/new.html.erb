@@ -1,13 +1,21 @@
 <% provide(:title, "Sign in") %>
 
-<div class="center">
-	<div class="thema-text"><%= I18n.t "sessions.view.input_to_admin_dashboard"%></div>
-  <%= simple_form_for(:session, url: auth_sessions_path) do |f| %>
+<div style="margin: 40px;">
+	<h3 style="text-align: center;"><%= I18n.t "sessions.view.input_to_admin_dashboard"%></h3>
 
-    <%= f.input :email, label: (I18n.t "sessions.view.email") %>
-    <%= f.input :password, label: (I18n.t "sessions.view.password") %>
+	  <%= simple_form_for :session, url: auth_sessions_path,
+	  wrapper_mappings: {
+	    check_boxes: :vertical_radio_and_checkboxes,
+	    boolean: :vertical_boolean
+	  } do |f| %>
+		  <%= f.error_notification %>
+		  
 
-    <%= f.submit (I18n.t "sessions.view.enter"), class: "btn btn-large btn-primary" %>
-  <% end %>
+		  <%= f.input :email,  placeholder: (I18n.t "sessions.view.enter_email"), label: (I18n.t "sessions.view.email") %>
+		  <%= f.input :password, placeholder: (I18n.t "sessions.view.enter_password"), label: (I18n.t "sessions.view.password") %>  
+
+		  <%= f.submit (I18n.t "sessions.view.enter"), class: "btn btn-large btn-primary"  %> 
+		<% end %>
+
 
 </div>

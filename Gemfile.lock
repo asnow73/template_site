@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/plataformatec/simple_form.git
+  revision: 97c5832473588b0ad33649264de991d3f7351c59
+  branch: master
+  specs:
+    simple_form (3.1.0.rc2)
+      actionpack (~> 4.0)
+      activemodel (~> 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -27,8 +36,6 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.2)
     bcrypt-ruby (3.0.1)
-    bootstrap-sass (3.1.1.1)
-      sass (~> 3.2)
     breadcrumbs_on_rails (2.3.0)
     builder (3.1.4)
     capybara (2.1.0)
@@ -161,9 +168,6 @@ GEM
       multi_json (~> 1.0)
       rubyzip (< 1.0.0)
       websocket (~> 1.0.4)
-    simple_form (3.0.1)
-      actionpack (>= 4.0.0, < 4.1)
-      activemodel (>= 4.0.0, < 4.1)
     sprockets (2.11.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -198,7 +202,6 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
-  bootstrap-sass (~> 3.1.1)
   breadcrumbs_on_rails
   capybara (= 2.1.0)
   ckeditor
@@ -215,7 +218,7 @@ DEPENDENCIES
   sass-rails (~> 4.0.0)
   sdoc
   selenium-webdriver (= 2.35.1)
-  simple_form (~> 3.0.0)
+  simple_form (~> 3.1.0.rc1)!
   sqlite3
   therubyracer
   turbolinks

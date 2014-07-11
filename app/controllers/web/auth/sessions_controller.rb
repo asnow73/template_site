@@ -4,7 +4,7 @@ class Web::Auth::SessionsController < ApplicationController
     if User.count == 0
       User.create_first_admin
       #Section.create_default_sections Временно пока нет модели section
-      flash[:notice] = I18n.t "sessions.controller.first_admin_was_created"
+      flash[:info] = I18n.t "sessions.controller.first_admin_was_created"
     end
   end
 
@@ -14,7 +14,7 @@ class Web::Auth::SessionsController < ApplicationController
       sign_in user
       redirect_back_or rails_admin_path
     else
-      flash.now[:error] = I18n.t "sessions.controller.email_or_password_is_fail"
+      flash.now[:danger] = I18n.t "sessions.controller.email_or_password_is_fail"
       render 'new'
     end    
   end
