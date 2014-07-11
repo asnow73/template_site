@@ -3,7 +3,7 @@ ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
-gem 'bootstrap-sass', '~> 3.1.1'
+#gem 'bootstrap-sass', '~> 3.1.1'
 #gem 'twitter-bootstrap-rails'
 gem 'breadcrumbs_on_rails'
 gem 'configus'
@@ -13,7 +13,8 @@ gem 'configus'
 #gem 'kaminari'
 gem 'rails_admin'
 gem 'ckeditor'
-gem 'simple_form', '~> 3.0.0'
+#gem 'simple_form', '~> 3.0.0'
+gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form', branch: 'master'
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do

@@ -1,25 +1,54 @@
+<!-- Header
+  ================================================== -->
 <header>
-	<div class="navbar navbar-fixed-top navbar-inverse">
-	  <div class="navbar-inner">
-	    <div class="container">
-	      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-	        <span class="icon-bar"></span>
-	      </a>
-	      <%= link_to (I18n.t "application.controller.home"), root_path, :class => "brand pull-left" %>
-	      <div class="nav-collapse pull-right">
-	        <div class="btn-group">
-	        	<% if signed_in? %>
-					    <button type="button" class="btn btn-default"><%= link_to (I18n.t "application.view.layouts.header.logout"), auth_signout_path, method: "delete" %></button>
-					  <% else %>
-					    <button type="button" class="btn btn-default"><%= link_to (I18n.t "application.view.layouts.header.login"), auth_signin_path %></button>
-					  <% end %>>
-					</div>
-	      </div>
+	<div class="left-part">
+		<a class="logo" href="#"><img alt="" src="<%= asset_path 'laboq/logo.png' %>"></a>
+	</div>
+	<div class="right-part">
+		<div class="menu-box">
+			<ul class="menu">
+				<!--<li><a class="active" href="index.html"><span>Home</span></a></li>-->
+				<li>
+				  <%= link_to root_path, class: "active" do %>
+            <span><%= (I18n.t "application.controller.home") %></span>
+          <% end %>
+        </li>
+				<li><a href="#"><span>About</span></a></li>
+				<li class="drop"><a href="#"><span>blog</span></a>
+					<ul class="drop-down">
+						<li><a href="#"><span>Blog</span></a></li>
+						<li><a href="#"><span>Blog with sidebar</span></a></li>
+						<li><a href="#"><span>Single Post</span></a></li>
+					</ul>
+				</li>
+				<li><a href="#"><span>Contact</span></a></li>
+			</ul>				
+		</div>
+
+		<div class="contact-info-box">
+			<h1>Contact Info</h1>
+			<p>
+				<span><i class="fa fa-envelope-o"></i>support@convertible.com</span>
+				<span><i class="fa fa-phone"></i>1234 - 5678 - 9012</span>
+			</p>
+
+	    <div class="nav-collapse pull-right">
+	      <div class="btn-group">
+	      	<% if signed_in? %>
+				    <button type="button" class="btn btn-default"><%= link_to (I18n.t "application.view.layouts.header.logout"), auth_signout_path, method: "delete" %></button>
+				  
+				    <!--<button type="button" class="btn btn-default"><%= link_to (I18n.t "application.view.layouts.header.login"), auth_signin_path %></button>-->
+				  <% end %>
+				</div>
 	    </div>
-	  </div>
+		</div>
+
 	</div>
 
-	<ol class="breadcrumb">
-		<%= render_breadcrumbs :tag => :li, :separator => " / " %>
-	</ol>
+<div></div>
+<ol class="breadcrumb">
+	<%= render_breadcrumbs :tag => :li, :separator => "" %>
+</ol>
+
 </header>
+<!-- End Header -->
